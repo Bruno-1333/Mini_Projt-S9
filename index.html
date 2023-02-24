@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Journalier</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Le Journalier</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <form class="was-validated">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label"></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput"
+                           placeholder="Nom">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+
+                            <label for="validationTextarea" class="form-label"></label>
+                            <div class="invalid-feedback">
+                                Brève Biographie.
+                            </div>
+                            <textarea class="form-control" id="validationTextarea"></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected></option>
+                                <option value="1">Politique</option>
+                                <option value="2">Sport</option>
+                                <option value="3">Nouvelles</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label for="exampleColorInput" class="form-label">Couleur Péférée</label>
+                            <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                                   value="#563d7c"
+                                   title="Choose your color">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Soumettre</button>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Annuler</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </form>
+        </div>
+        <div class="col-md-4">
+            <p>Notre Equipe: </p>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
