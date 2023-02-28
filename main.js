@@ -1,15 +1,16 @@
 //Créer deux classes avec constructeurs : un pour le journaliste et l’autre pour l’équipe.
 
 $(function() {
-   ajouterJournaliste();
-    afficherEquipe();
-    soumettre();
-    couleurDejaPresente();
-    specialiteDejaPresente();
+    $("#form").on('submit',function(e) {
+        e.preventDefault();
+        afficherEquipe();
+        soumettre();
+        couleurDejaPresente();
+        specialiteDejaPresente();
+    });
+
 });
 
-
-function ajouterJournaliste() {
     class journaliste {
         constructor(nom, bio, specialite, couleur) {
             this.nom = nom;
@@ -51,24 +52,20 @@ function ajouterJournaliste() {
         }
     }
     const $equipe = new equipe();
-    const journaliste1 = new journaliste("Jean", "Je suis un journaliste", "Sport", "red");
-    const journaliste2 = new journaliste("Pierre", "Je suis un journaliste", "Politique", "blue");
-    const journaliste3 = new journaliste("Paul", "Je suis un journaliste", "Culture", "green");
 
     sessionStorage.setItem("equipe", JSON.stringify($equipe));
     $jsonObject = JSON.parse(sessionStorage.getItem("equipe"));
-    const $equipe2 = new equipe();
+    const $equipe = new equipe();
     $equipe2.deserialiser($jsonObject);
 
-    const journaliste4 = new journaliste("Jacques", "Je suis un journaliste", "Sport", "yellow");
-    $equipe2.ajouterJournaliste(journaliste4);
-    $("#equipe").append($equipe2.toString());
+    const journaliste4 = new journaliste($jsonObject.nom, $jsonObject.bio, $jsonObject.specialite, $jsonObject.couleur);
+    $equipe.ajouterJournaliste(journaliste4);
+    $("#equipe").html($equipe.toString());
 
-    function afficherEquipe() {
-        $("#equipe").append($equipe2.toString());
-    }
+
+function afficherEquipe() {
+    $("#equipe").html($equipe.toString());
 }
-
 
 // function submeter
 function soumettre() {
@@ -100,6 +97,7 @@ function specialiteDejaPresente(specialite) {
     }
     return false;
 }
+
 
 
 
